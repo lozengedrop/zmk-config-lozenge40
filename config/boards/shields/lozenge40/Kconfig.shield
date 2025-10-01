@@ -1,0 +1,8 @@
+# Copyright (c) 2020 Pete Johanson
+# SPDX-License-Identifier: MIT
+
+config SHIELD_LOZENGE40_LEFT
+    def_bool $(shields_list_contains,lozenge40_left)
+
+config SHIELD_LOZENGE40_RIGHT
+    def_bool $(shields_list_contains,lozenge40_right)

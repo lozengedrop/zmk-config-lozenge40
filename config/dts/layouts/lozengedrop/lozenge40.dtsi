@@ -1,0 +1,8 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    lozengedrop_lozenge40_layout: lozengedrop_lozenge40_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Default";
+    };
+};
