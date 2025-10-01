@@ -47,7 +47,7 @@
 // | CAPS| home| INS  | end  | PREV |    [   |  |   ]   |  0   |  1    |  2    |  3   |   \   |
 //                    |      |      |        |  |       |      |       |
             bindings = <
-&kp ESC     &kp PG_UP  &kp UP    &kp PG_DN  &kp C_PP                         &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp FLSH
+&kp ESC     &kp PG_UP  &kp UP    &kp PG_DN  &kp C_PP                         &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp FSLH
 &kp TAB     &kp LEFT   &kp DOWN  &kp RIGHT  &kp C_NEXT  &kp GRAVE  &lrpar    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp STAR
 &caps_word  &kp HOME   &kp INS   &kp END    &kp C_PREV  &kp LBKT   &kp RBKT  &kp N0     &kp N1  &kp N2  &kp N3  &kp BSLH
                                  &trans     &trans      &trans     &trans    &trans     &trans  
