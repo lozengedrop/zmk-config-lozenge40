@@ -20,6 +20,6 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: lozenge_40_left
+    shield: lozenge40_left
   - board: nice_nano_v2
-    shield: lozenge_40_right
+    shield: lozenge40_right
