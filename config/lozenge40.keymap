@@ -30,9 +30,9 @@
 // |  Z  |  X  |  C   |  V   |  B      |    [   |  |    ]    |   N   |  M    |  ,    |  .   |   /   |
 //                    | BKSP |  SPACE  |  LOWER |  |   SHIFT | ENTER | CTRL  |
             bindings = <
-&mt LMETA  Q  &kp W  &kp E    &mt LMETA  R    &mt LALT T                        &mt RALT Y   &mt RMETA  U    &kp I     &kp O   &mt RMETA  P
-&mt LSHIFT A  &kp S  &kp D    &mt LSHIFT F    &kp G     &kp KP_LPAR &kp KP_RPAR &kp H        &mt RSHIFT J    &kp K     &kp L   &mt RSHIFT SEMI
-&mt LCTRL  Z  &kp X  &kp C    &mt LCTRL  V    &kp B     &kp LBKT    &kp RBKT    &kp N        &mt RCTRL  M    &kp COMMA &kp DOT &mt RCTRL  FSLH
+&mt LMETA  Q  &kp W  &kp E    &mt LMETA  R    &mt LALT T                        &mt RALT Y   &mt LMETA  U    &kp I     &kp O   &mt LMETA  P
+&mt LCTRL  A  &kp S  &kp D    &mt LCTRL  F    &kp G     &kp KP_LPAR &kp KP_RPAR &kp H        &mt LCTRL  J    &kp K     &kp L   &mt LCTRL  SEMI
+&mt LSHIFT Z  &kp X  &kp C    &mt LSHIFT V    &kp B     &kp LBKT    &kp RBKT    &kp N        &mt LSHIFT M    &kp COMMA &kp DOT &mt LSHIFT FSLH
                               &kp BSPC        &kp SPACE &mo 1       &mo 2       &kp RET      &kp DEL  
             >;
 
