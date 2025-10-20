@@ -17,9 +17,14 @@
             bindings = <&kp LPAR>, <&kp RPAR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        &mt {
+        cm: column_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
         };
     };
 
@@ -34,9 +39,9 @@
 // |  Z  |  X  |  C   |  V   |  B      |    [   |  |    ]    |   N   |  M    |  ,    |  .   |   /   |
 //                    | BKSP |  SPACE  |  LOWER |  |   SHIFT | ENTER | CTRL  |
             bindings = <
-&mt LMETA  Q  &kp W  &kp E    &mt LMETA  R    &mt LALT T                        &mt RALT Y   &mt LMETA  U    &kp I     &kp O   &mt LMETA  P
-&mt LCTRL  A  &kp S  &kp D    &mt LCTRL  F    &kp G     &kp KP_LPAR &kp KP_RPAR &kp H        &mt LCTRL  J    &kp K     &kp L   &mt LCTRL  SEMI
-&mt LSHIFT Z  &kp X  &kp C    &mt LSHIFT V    &kp B     &kp LBKT    &kp RBKT    &kp N        &mt LSHIFT M    &kp COMMA &kp DOT &mt LSHIFT FSLH
+&cm LMETA  Q  &kp W  &kp E    &cm LMETA  R    &cm LALT T                        &cm RALT Y   &cm LMETA  U    &kp I     &kp O   &cm LMETA  P
+&cm LCTRL  A  &kp S  &kp D    &cm LCTRL  F    &kp G     &kp KP_LPAR &kp KP_RPAR &kp H        &cm LCTRL  J    &kp K     &kp L   &cm LCTRL  SEMI
+&cm LSHIFT Z  &kp X  &kp C    &cm LSHIFT V    &kp B     &kp LBKT    &kp RBKT    &kp N        &cm LSHIFT M    &kp COMMA &kp DOT &cm LSHIFT FSLH
                               &kp BSPC        &kp SPACE &mo 1       &mo 2       &kp RET      &kp DEL  
             >;
 
