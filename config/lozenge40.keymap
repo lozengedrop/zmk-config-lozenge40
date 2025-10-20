@@ -17,6 +17,10 @@
             bindings = <&kp LPAR>, <&kp RPAR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        &mt {
+            flavor = "balanced";
+            require-prior-idle-ms = <200>;
+        };
     };
 
     keymap {
