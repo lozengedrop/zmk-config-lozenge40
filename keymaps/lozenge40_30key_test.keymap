@@ -16,14 +16,14 @@
         td_shft_meta: tap_dance_shft_meta {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <400>;
             bindings = <&kp LSHFT>, <&kp LMETA>, <&kp LS(LMETA)>;
         };
 
         td_ctrl_alt: tap_dance_ctrl_alt {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <400>;
             bindings = <&kp LCTRL>, <&kp LALT>, <&kp LC(LALT)>;
         };
 
@@ -53,6 +53,13 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp AT>, <&kp GRAVE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_underscore_tilde: mm_underscore_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp UNDER>, <&kp TILDE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -100,7 +107,7 @@
             bindings = <
 &kp ESC    &mm_amp_pipe &kp CARET  &kp SEMI   &none                               &none      &kp LT     &kp UP     &kp GT     &kp Q
 &kp TAB    &kp BSPC     &kp DEL    &kp SQT    &none      &none         &none      &none      &kp LEFT   &kp DOWN   &kp RIGHT  &kp Z
-&caps_word   &none        &none      &kp UNDER  &none      &none         &none      &none      &mm_qmark_excl &kp PERCENT &mm_hash_doll &mm_at_grave
+&caps_word   &none        &none    &mm_underscore_tilde  &none      &none         &none      &none      &mm_qmark_excl &kp PERCENT &mm_hash_doll &mm_at_grave
                                    &mo 3      &trans     &trans        &trans     &trans     &trans
             >;
         };
