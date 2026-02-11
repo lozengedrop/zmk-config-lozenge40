@@ -62,13 +62,6 @@
             bindings = <&kp UNDER>, <&kp TILDE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        mm_pcent_caret: mm_pcent_caret {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp PERCENT>, <&kp CARET>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     keymap {
@@ -77,10 +70,10 @@
         base_layer {
             display-name = "BASE";
 // ------------------------------------------------------------------------------------------------------------
-// |  B  |  Y  |  O  |  U  | None |                  | None |  D  |  N  |  G  |  V  |
+// |  B  |  Y  |  O  |  U  | None |                   | None |  D  |  N  |  G  |  V  |
 // |  H  |  I  |  A  |  E  | None |  None  | |  None | None |  T  |  R  |  S  |  C  |
 // |  K  |  P  |  J  |  W  | None |  None  | |  None | None |  M  |  L  |  F  |  X  |
-//                   | NUM | SPACE|ShftMeta| |CtrlAlt| ENTER| SYM |
+//                    | NUM | SPACE|ShftMeta| |CtrlAlt| ENTER| SYM |
             bindings = <
 &kp B      &kp Y      &kp O      &kp U      &none                               &none      &kp D      &kp N      &kp G      &kp V
 &kp H      &kp I      &kp A      &kp E      &none      &none         &none      &none      &kp T      &kp R      &kp S      &kp C
@@ -92,10 +85,10 @@
         num_layer {
             display-name = "NUM";
 // ------------------------------------------------------------------------------------------------------------
-// |  [  |  ]  |  *  |  +  | None |                   | None |  7  |  8  |  9  | ,/< |
-// |  (  |  )  |  /  |  -  | None |  None  | |  None  | None |  4  |  5  |  6  | ./>  |
+// |  [  |  ]  |  * |  +  | None |                    | None |  7  |  8  |  9  |  ,  |
+// |  (  |  )  |  /  |  -  | None |  None  | |  None  | None |  4  |  5  |  6  |  .  |
 // |  {  |  }  |  \  |  =  | None |  None  | |  None  | None |  1  |  2  |  3  |  0  |
-//                   |trans| trans|  trans | |  trans | trans| FUN |
+//                    |trans| trans|  trans | |  trans | trans| FUN |
             bindings = <
 &kp LBKT   &kp RBKT   &kp STAR   &kp PLUS   &none                               &none      &kp N7     &kp N8     &kp N9     &kp COMMA
 &kp LPAR   &kp RPAR   &kp FSLH   &kp MINUS  &none      &none         &none      &none      &kp N4     &kp N5     &kp N6     &kp DOT
@@ -107,14 +100,14 @@
         sym_layer {
             display-name = "SYM";
 // ------------------------------------------------------------------------------------------------------------
-// | ESC |  &/| | %/^ | ;/: | None |                   | None | HOME |  UP  | END  |  Q  |
+// | ESC |  &/| | ^/√ | ;/: | None |                    | None |   <  |  UP  |  >   |  Q  |
 // | TAB | BKSP | DEL | '/" | None |  None  | |  None  | None | LEFT | DOWN | RGHT |  Z  |
-// | CAPS|  #/$ | ?/! | _/~ | None |  None  | |  None  | None | PGUP | INS  | PGDN | @/` |
+// | CAPS|  °/μ | —/– | _/~ | None |  None  | |  None  | None |  ?/! |  %/‰ |  #/$ | @/` |
 //                    | FUN | trans|  trans | |  trans | trans| trans|
             bindings = <
-&kp ESC    &mm_amp_pipe &mm_pcent_caret  &kp SEMI   &none                               &none      &kp HOME     &kp UP     &kp END     &kp Q
+&kp ESC    &mm_amp_pipe &kp CARET  &kp SEMI   &none                               &none      &kp LT     &kp UP     &kp GT     &kp Q
 &kp TAB    &kp BSPC     &kp DEL    &kp SQT    &none      &none         &none      &none      &kp LEFT   &kp DOWN   &kp RIGHT  &kp Z
-&caps_word   &mm_hash_doll        &mm_qmark_excl    &mm_underscore_tilde  &none      &none         &none      &none      &kp PG_UP &kp INS &kp PG_DN &mm_at_grave
+&caps_word   &none        &none    &mm_underscore_tilde  &none      &none         &none      &none      &mm_qmark_excl &kp PERCENT &mm_hash_doll &mm_at_grave
                                    &mo 3      &trans     &trans        &trans     &trans     &trans
             >;
         };
@@ -122,10 +115,10 @@
         fun_layer {
             display-name = "FUN";
 // ------------------------------------------------------------------------------------------------------------
-// | BT1 | BT2 | BT3 | BT4 | None |                   | None |  F7  |  F8  |  F9  |  F12  |
+// | BT1 | BT2 | BT3 | BT4 | None |                    | None |  F7  |  F8  |  F9  |  F12  |
 // | None| None| None| None| None |  None  | |  None  | None |  F4  |  F5  |  F6  |  F11  |
 // | None| None| None| None| None |  None  | |  None  | None |  F1  |  F2  |  F3  |  F10  |
-//                   |trans| BTCLR|  trans | |  trans |OutSel| trans|
+//                    |trans| BTCLR|  trans | |  trans |OutSel| trans|
             bindings = <
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none                       &none      &kp F7     &kp F8     &kp F9     &kp F12
 &none        &none        &none        &none        &none      &none     &none  &none      &kp F4     &kp F5     &kp F6     &kp F11
