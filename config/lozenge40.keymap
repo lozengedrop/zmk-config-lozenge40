@@ -27,11 +27,25 @@
             bindings = <&kp LCTRL>, <&kp LALT>, <&kp LC(LALT)>;
         };
 
-        // Mod-Morph Definitions
+        // Mod-Morph Definitions for "x/y" (Normal/Shifted)
         mm_amp_pipe: mm_amp_pipe {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp AMPS>, <&kp PIPE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_sqt_grave: mm_sqt_grave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp GRAVE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_dqt_at: mm_dqt_at {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DQT>, <&kp AT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -42,20 +56,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_hash_doll: mm_hash_doll {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp HASH>, <&kp DLLR>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mm_at_grave: mm_at_grave {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp AT>, <&kp GRAVE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         mm_underscore_tilde: mm_underscore_tilde {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -63,12 +63,25 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_pcent_caret: mm_pcent_caret {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp PERCENT>, <&kp CARET>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+        // Numerical Morphs
+        mm_n7_caret: mm_n7_caret { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N7>, <&kp CARET>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_n8_star:  mm_n8_star  { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N8>, <&kp STAR>;  mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_n9_plus:  mm_n9_plus  { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N9>, <&kp PLUS>;  mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_n4_doll:  mm_n4_doll  { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N4>, <&kp DLLR>;  mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_n5_fslh:  mm_n5_fslh  { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N5>, <&kp FSLH>;  mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_n6_minus: mm_n6_minus { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N6>, <&kp MINUS>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_n1_hash:  mm_n1_hash  { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N1>, <&kp HASH>;  mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_n2_bslh:  mm_n2_bslh  { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N2>, <&kp BSLH>;  mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_n3_equal: mm_n3_equal { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N3>, <&kp EQUAL>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_n0_prcnt: mm_n0_prcnt { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp N0>, <&kp PERCENT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+
+        // Punctuation Morphs
+        mm_com_sc: mm_com_sc { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp COMMA>, <&kp SEMI>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_dot_co: mm_dot_co { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp DOT>, <&kp COLON>;   mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_lpar_lt: mm_lpar_lt { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LPAR>, <&kp LT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_rpar_gt: mm_rpar_gt { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp RPAR>, <&kp GT>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_lbkt_lbrc: mm_lbkt_lbrc { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBKT>, <&kp LBRC>; mods = <(MOD_LSFT|MOD_RSFT)>; };
+        mm_rbkt_rbrc: mm_rbkt_rbrc { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD_LSFT|MOD_RSFT)>; };
     };
 
     keymap {
@@ -76,61 +89,31 @@
 
         base_layer {
             display-name = "BASE";
-// ------------------------------------------------------------------------------------------------------------
-// |  B  |  Y  |  O  |  U  | None |                  | None |  D  |  N  |  G  |  V  |
-// |  H  |  I  |  A  |  E  | None |  None  | |  None | None |  T  |  R  |  S  |  C  |
-// |  K  |  P  |  J  |  W  | None |  None  | |  None | None |  M  |  L  |  F  |  X  |
-//                   | NUM | SPACE|ShftMeta| |CtrlAlt| ENTER| SYM |
             bindings = <
-&kp B      &kp Y      &kp O      &kp U      &none                               &none      &kp D      &kp N      &kp G      &kp V
-&kp H      &kp I      &kp A      &kp E      &none      &none         &none      &none      &kp T      &kp R      &kp S      &kp C
-&kp K      &kp P      &kp J      &kp W      &none      &none         &none      &none      &kp M      &kp L      &kp F      &kp X
-                                 &mo 1      &kp SPACE  &td_shft_meta &td_ctrl_alt &kp RET  &mo 2
+&kp B  &kp Y  &kp O  &kp U  &none                               &none          &kp D     &kp N  &kp G  &kp V
+&kp H  &kp I  &kp A  &kp E  &none      &none      &none         &none          &kp T     &kp R  &kp S  &kp C
+&kp K  &kp P  &kp J  &kp W  &none      &none      &none         &none          &kp M     &kp L  &kp F  &kp X
+                     &mo 1  &kp SPACE  &kp RET    &td_ctrl_alt  &td_shft_meta  &kp BKSP
             >;
         };
 
         num_layer {
-            display-name = "NUM";
-// ------------------------------------------------------------------------------------------------------------
-// |  [  |  ]  |  *  |  +  | None |                   | None |  7  |  8  |  9  | ,/< |
-// |  (  |  )  |  /  |  -  | None |  None  | |  None  | None |  4  |  5  |  6  | ./>  |
-// |  {  |  }  |  \  |  =  | None |  None  | |  None  | None |  1  |  2  |  3  |  0  |
-//                   |trans| trans|  trans | |  trans | trans| FUN |
-            bindings = <
-&kp LBKT   &kp RBKT   &kp STAR   &kp PLUS   &none                               &none      &kp N7     &kp N8     &kp N9     &kp COMMA
-&kp LPAR   &kp RPAR   &kp FSLH   &kp MINUS  &none      &none         &none      &none      &kp N4     &kp N5     &kp N6     &kp DOT
-&kp LBRC   &kp RBRC   &kp BSLH   &kp EQUAL  &none      &none         &none      &none      &kp N1     &kp N2     &kp N3     &kp N0
-                                 &trans     &trans     &trans        &trans     &trans     &mo 3
-            >;
-        };
-
-        sym_layer {
             display-name = "SYM";
-// ------------------------------------------------------------------------------------------------------------
-// | ESC |  &/| | %/^ | ;/: | None |                   | None | HOME |  UP  | END  |  Q  |
-// | TAB | BKSP | DEL | '/" | None |  None  | |  None  | None | LEFT | DOWN | RGHT |  Z  |
-// | CAPS|  #/$ | ?/! | _/~ | None |  None  | |  None  | None | PGUP | INS  | PGDN | @/` |
-//                    | FUN | trans|  trans | |  trans | trans| trans|
             bindings = <
-&kp ESC    &mm_amp_pipe &mm_pcent_caret  &kp SEMI   &none                               &none      &kp HOME     &kp UP     &kp END     &kp Q
-&kp TAB    &kp BSPC     &kp DEL    &kp SQT    &none      &none         &none      &none      &kp LEFT   &kp DOWN   &kp RIGHT  &kp Z
-&caps_word   &mm_hash_doll        &mm_qmark_excl    &mm_underscore_tilde  &none      &none         &none      &none      &kp PG_UP &kp INS &kp PG_DN &mm_at_grave
-                                   &mo 3      &trans     &trans        &trans     &trans     &trans
+&kp Q  &mm_amp_pipe         &mm_sqt_grave  &mm_dqt_at     &none                       &none   &mm_n7_caret  &mm_n8_star  &mm_n9_plus   &mm_com_sc
+&kp Z  &mm_underscore_tilde &mm_lpar_lt    &mm_rpar_gt    &none    &none      &none   &none   &mm_n4_doll   &mm_n5_fslh  &mm_n6_minus  &mm_dot_co
+&mo 2  &mm_qmark_excl       &mm_lbkt_lbrc  &mm_rbkt_rbrc  &none    &none      &none   &none   &mm_n1_hash   &mm_n2_bslh  &mm_n3_equal  &mm_n0_prcnt
+                                           &trans         &kp TAB  &kp ESC    &trans  &trans  &kp DEL
             >;
         };
 
         fun_layer {
             display-name = "FUN";
-// ------------------------------------------------------------------------------------------------------------
-// | BT1 | BT2 | BT3 | BT4 | None |                   | None |  F7  |  F8  |  F9  |  F12  |
-// | None| None| None| None| None |  None  | |  None  | None |  F4  |  F5  |  F6  |  F11  |
-// | None| None| None| None| None |  None  | |  None  | None |  F1  |  F2  |  F3  |  F10  |
-//                   |trans| BTCLR|  trans | |  trans |OutSel| trans|
             bindings = <
-&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none                       &none      &kp F7     &kp F8     &kp F9     &kp F12
-&none        &none        &none        &none        &none      &none     &none  &none      &kp F4     &kp F5     &kp F6     &kp F11
-&none        &none        &none        &none        &none      &none     &none  &none      &kp F1     &kp F2     &kp F3     &kp F10
-                                       &trans       &bt BT_CLR &trans    &trans &out OUT_TOG &trans
+&bt BT_CLR    &kp HOME      &kp UP        &kp END       &none                         &none   &kp F7     &kp F8  &kp F9  &kp F12
+&out OUT_TOG  &kp LEFT      &kp DOWN      &kp RIGHT     &none       &none     &none   &none   &kp F4     &kp F5  &kp F6  &kp F11
+&trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none       &none     &none   &none   &kp F1     &kp F2  &kp F3  &kp F10
+                                          &trans        &bt BT_CLR  &trans    &trans  &trans  &soft_off
             >;
         };
     };
