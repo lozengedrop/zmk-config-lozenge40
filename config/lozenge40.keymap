@@ -84,37 +84,42 @@
         mm_rbkt_rbrc: mm_rbkt_rbrc { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD_LSFT|MOD_RSFT)>; };
     };
 
+    &lt {
+        flavor = "hold-preferred";
+        retro-tap;
+    }; 
+
     keymap {
         compatible = "zmk,keymap";
 
-        base_layer {
+        base_layer {6
             display-name = "BASE";
             bindings = <
-&kp B  &kp Y  &kp O  &kp U  &none                               &none          &kp D     &kp N  &kp G  &kp V
-&kp H  &kp I  &kp A  &kp E  &none      &none      &none         &none          &kp T     &kp R  &kp S  &kp C
-&kp K  &kp P  &kp J  &kp W  &none      &none      &none         &none          &kp M     &kp L  &kp F  &kp X
-                     &mo 1  &kp SPACE  &kp RET    &td_ctrl_alt  &td_shft_meta  &kp BKSP
+&kp B  &kp Y  &kp O  &kp U      &none                                 &none          &kp D     &kp N  &kp G  &kp V
+&kp H  &kp I  &kp A  &kp E      &none      &none        &none         &none          &kp T     &kp R  &kp S  &kp C
+&kp K  &kp P  &kp J  &kp W      &none      &none        &none         &none          &kp M     &kp L  &kp F  &kp X
+                     &lt 1 RET  &kp SPACE  &lt 2 TAB    &td_ctrl_alt  &td_shft_meta  &kp BKSP
             >;
         };
 
         num_layer {
             display-name = "SYM";
             bindings = <
-&kp Q  &mm_amp_pipe         &mm_sqt_grave  &mm_dqt_at     &none                       &none   &mm_n7_caret  &mm_n8_star  &mm_n9_plus   &mm_com_sc
-&kp Z  &mm_underscore_tilde &mm_lpar_lt    &mm_rpar_gt    &none    &none      &none   &none   &mm_n4_doll   &mm_n5_fslh  &mm_n6_minus  &mm_dot_co
-&mo 2  &mm_qmark_excl       &mm_lbkt_lbrc  &mm_rbkt_rbrc  &none    &none      &none   &none   &mm_n1_hash   &mm_n2_bslh  &mm_n3_equal  &mm_n0_prcnt
-                                           &trans         &kp TAB  &kp ESC    &trans  &trans  &kp DEL
+&kp Q  &mm_amp_pipe         &mm_sqt_grave  &mm_dqt_at     &none                          &none   &mm_n7_caret  &mm_n8_star  &mm_n9_plus   &mm_com_sc
+&kp Z  &mm_underscore_tilde &mm_lpar_lt    &mm_rpar_gt    &none    &none         &none   &none   &mm_n4_doll   &mm_n5_fslh  &mm_n6_minus  &mm_dot_co
+&none  &mm_qmark_excl       &mm_lbkt_lbrc  &mm_rbkt_rbrc  &none    &none         &none   &none   &mm_n1_hash   &mm_n2_bslh  &mm_n3_equal  &mm_n0_prcnt
+                                           &trans         &kp ESC  &caps_word    &trans  &trans  &kp DEL
             >;
         };
 
         fun_layer {
             display-name = "FUN";
             bindings = <
-&bt BT_CLR    &kp HOME      &kp UP        &kp END       &none                               &none   &kp F7     &kp F8  &kp F9  &kp F12
-&out OUT_TOG  &kp LEFT      &kp DOWN      &kp RIGHT     &none         &none         &none   &none   &kp F4     &kp F5  &kp F6  &kp F11
-&trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none         &none         &none   &none   &kp F1     &kp F2  &kp F3  &kp F10
-                                          &trans        &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &soft_off
+&bt BT_CLR    &kp HOME      &kp UP        &kp END       &none                           &none   &kp F7     &kp F8  &kp F9  &kp F12
+&out OUT_TOG  &kp LEFT      &kp DOWN      &kp RIGHT     &none         &none     &none   &none   &kp F4     &kp F5  &kp F6  &kp F11
+&soft_off     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none         &none     &none   &none   &kp F1     &kp F2  &kp F3  &kp F10
+                                          &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &trans  &trans
             >;
         };
     };
-};
+};6
