@@ -10,6 +10,11 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 
+&lt {
+    flavor = "hold-preferred";
+    retro-tap;
+}; 
+
 / {
     behaviors {
         // Tap Dance Definitions
@@ -83,11 +88,6 @@
         mm_lbkt_lbrc: mm_lbkt_lbrc { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp LBKT>, <&kp LBRC>; mods = <(MOD_LSFT|MOD_RSFT)>; };
         mm_rbkt_rbrc: mm_rbkt_rbrc { compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; bindings = <&kp RBKT>, <&kp RBRC>; mods = <(MOD_LSFT|MOD_RSFT)>; };
     };
-
-    &lt {
-        flavor = "hold-preferred";
-        retro-tap;
-    }; 
 
     keymap {
         compatible = "zmk,keymap";
