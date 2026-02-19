@@ -92,7 +92,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base_layer {6
+        base_layer {
             display-name = "BASE";
             bindings = <
 &kp B  &kp Y  &kp O  &kp U      &none                                 &none          &kp D     &kp N  &kp G  &kp V
