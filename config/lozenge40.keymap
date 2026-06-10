@@ -22,7 +22,7 @@
 #define BLP 22 // Bottom Left Pinky
 #define BLR 23 // Bottom Left Ring
 #define BLM 24 // Bottom Left Middle
-#define BLI 24 // Bottom Left Index
+#define BLI 25 // Bottom Left Index
 
 // LEFT THUMBS
 #define LOT 35 // Left Outer Thumb
