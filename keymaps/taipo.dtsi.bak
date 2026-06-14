@@ -76,8 +76,6 @@ combo_r_bspc { \
 	layers = <COMBO_LAYERS>; \
 };
 
-
-
 TCOMBO(R,      &kp R,      &kp LS(R), &kp GT,     &kp PSCRN,    TLP,         TRP)
 TCOMBO(S,      &kp S,      &kp LS(S), &kp RBRC,   &kp C_BRI_UP, TLR,         TRR)
 TCOMBO(N,      &kp N,      &kp LS(N), &kp RBKT,   &kp C_BRI_DN, TLM,         TRM)
@@ -109,10 +107,12 @@ TCOMBO(MINUS,  &kp MINUS,  &kp UNDER, &kp PRCNT,  &none,        TLM BLR,     TRM
 TCOMBO(QMARK,  &kp QMARK,  &kp EXCL,  &kp CAPS,   &none,        TLI BLM,     TRI BRM)
 TCOMBO(COMMA,  &kp COMMA,  &kp DOT,   &kp TILDE,  &none,        TLM BLI,     TRM BRI)
 TCOMBO(SEMI,   &kp SEMI,   &kp COLON, &none,      &none,        TLP BLR,     TRP BRR)
+TCOMBO(SEMI2,  &kp SEMI,   &kp COLON, &none,      &none,        BLR TLM BLI, BRR TRM BRI)
 TCOMBO(SQT,    &kp SQT,    &kp DQT,   &kp GRAVE,  &none,        TLR BLP,     TRR BRP)
-TCOMBO(TAB,    &kp TAB,    &kp DEL,   &clear_mods,    &bt BT_CLR,   TLP TLR TLM TLI, TRP TRR TRM TRI)
-TCOMBO(ENTER,  &kp ENTER,  &kp ESC,   &kp LALT,   &bootloader,  BLP BLR BLM BLI, BRP BRR BRM BRI)
-TCOMBO(LGUI,   &td_gui,   &kp DOWN, &kp PGDN,   &bt BT_SEL 3, BLP BLR BLM, BRP BRR BRM)
-TCOMBO(LALT,   &td_alt,   &kp UP,    &kp PGUP,   &bt BT_SEL 2, TLP TLR TLM, TRP TRR TRM)
-TCOMBO(LCTRL,  &td_ctrl,  &kp RIGHT,  &kp END,    &bt BT_SEL 1, BLR BLM BLI, BRR BRM BRI)
-TCOMBO(LSHIFT, &td_shft, &kp LEFT,  &kp HOME,   &bt BT_SEL 0, TLR TLM TLI, TRR TRM TRI)
+TCOMBO(SQT2,   &kp SQT,    &kp DQT,   &kp GRAVE,  &none,        BLR TLM TLI, BRR TRM TRI)
+TCOMBO(TAB,    &kp TAB,    &kp DEL,   &kp INS,    &bt BT_CLR,   TLR TLM TLI, TRR TRM TRI)
+TCOMBO(ENTER,  &kp ENTER,  &kp ESC,   &kp LALT,   &bootloader,  BLR BLM BLI, BRR BRM BRI)
+TCOMBO(LGUI,   &sk LGUI,   &kp RIGHT, &kp PGUP,   &bt BT_SEL 3, TLP BLP,     TRP BRP)
+TCOMBO(LALT,   &sk LALT,   &kp UP,    &kp HOME,   &bt BT_SEL 2, TLR BLR,     TRR BRR)
+TCOMBO(LCTRL,  &sk LCTRL,  &kp DOWN,  &kp END,    &bt BT_SEL 1, TLM BLM,     TRM BRM)
+TCOMBO(LSHIFT, &sk LSHIFT, &kp LEFT,  &kp PGDN,   &bt BT_SEL 0, TLI BLI,     TRI BRI)

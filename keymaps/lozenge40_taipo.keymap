@@ -12,7 +12,7 @@
 // CONFIG
 #define COMBO_TIMEOUT 70
 #define COMBO_LAYERS 0
-#define STICKY_TIMEOUT 3000
+#define STICKY_TIMEOUT 500
 
 // LEFT SIDE (Mapped to Lozenge40 Home Row)
 #define TLP 10 // Top Left Pinky
@@ -52,46 +52,6 @@
     compatible = "zmk,combos";
     #include "taipo.dtsi"
   };
-
-  / {
-    macros {
-        clear_mods: clear_mods {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&kt LSHIFT &kt LCTRL &kt LALT &kt LGUI>;
-        };
-    };
-
-    behaviors {
-        td_shft: td_shft {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sk LSHIFT>, <&kt LSHIFT>;
-        };
-        td_ctrl: td_ctrl {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sk LCTRL>, <&kt LCTRL>;
-        };
-        td_alt: td_alt {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sk LALT>, <&kt LALT>;
-        };
-        td_gui: td_gui {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sk LGUI>, <&kt LGUI>;
-        };
-    };
-};
-
 
   keymap {
     compatible = "zmk,keymap";
