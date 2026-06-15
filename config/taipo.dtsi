@@ -120,3 +120,4 @@ TCOMBO(LGUIkt,   &td_gui,    &kp DOWN,   &kp PGDN,     &bt BT_SEL 3,   BLP BLR B
 TCOMBO(LALTkt,   &td_alt,    &kp UP,     &kp PGUP,     &bt BT_SEL 2,   TLP TLR TLM BLI,  TRP TRR TRM BRI)
 TCOMBO(LCTRLkt,  &td_ctrl,   &kp RIGHT,  &kp END,      &bt BT_SEL 1,   TLP BLR BLM BLI,  TRP BRR BRM BRI)
 TCOMBO(LSHIFTkt, &td_shft,   &kp LEFT,   &kp HOME,     &bt BT_SEL 0,   BLP TLR TLM TLI,  BRP TRR TRM TRI)
+TCOMBO(TOARW,    &tog 2,     &none,      &none,        &none,          BLR TLM BLI,      BRR TRM BRI)
