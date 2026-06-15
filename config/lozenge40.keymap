@@ -52,8 +52,6 @@
     compatible = "zmk,combos";
     #include "taipo.dtsi"
   };
-
-  / {
     macros {
         clear_mods: clear_mods {
             compatible = "zmk,behavior-macro";
@@ -90,7 +88,6 @@
             bindings = <&sk LGUI>, <&kt LGUI>;
         };
     };
-};
 
 
   keymap {
