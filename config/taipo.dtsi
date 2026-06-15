@@ -80,7 +80,7 @@ combo_r_bspc { \
 combo_goto_typ_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&totypl>; \
-	key-positions = <TLR TLM BLI>; \
+	key-positions = <BLR BLM TLI>; \
 };
 combo_goto_arw_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
@@ -95,12 +95,12 @@ combo_goto_mov_l { \
 combo_goto_num_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&tonuml>; \
-	key-positions = <TLP TLR TLM>; \
+	key-positions = <TLR TLM BLI>; \
 };
 combo_goto_typ_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&totypr>; \
-	key-positions = <TRR TRM BRI>; \
+	key-positions = <BRR BRM TRI>; \
 };
 combo_goto_arw_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
@@ -110,12 +110,12 @@ combo_goto_arw_r { \
 combo_goto_mov_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&tomovr>; \
-	key-positions = <TRR BRM BRI>; \
+	key-positions = <TRR BRM TRI>; \
 };
 combo_goto_num_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&tonumr>; \
-	key-positions = <TRP TRR TRM>; \
+	key-positions = <TRR TRM BRI>; \
 };
 
 

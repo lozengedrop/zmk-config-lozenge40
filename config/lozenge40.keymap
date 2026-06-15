@@ -46,7 +46,6 @@
 #define LNUMARW 29
 #define LNUMMOV 30
 #define LNUMSCR 31
-#define LNUMNUM 32
 
 #define TYP_LAYERS_LEFT <0 9 10 11 12>
 #define TYP_LAYERS_RIGHT <0 13 18 23 28>
@@ -384,10 +383,6 @@
       display-name = "NumScr";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
-    num_num_layer {
-      display-name = "NumNum";
-      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
-    };
   };
 
   conditional_layers {
@@ -483,10 +478,6 @@
         num_scr_layer_condition {
             if-layers = <LNUML LSCRR>;
             then-layer = <LNUMSCR>;
-        };
-        num_num_layer_condition {
-            if-layers = <LNUML LNUMR>;
-            then-layer = <LNUMNUM>;
         };
     };
 };
