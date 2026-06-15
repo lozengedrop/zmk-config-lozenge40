@@ -17,28 +17,39 @@
 #define LTYPTYP 0
 #define LARWL 1
 #define LMOVL 2
-#define LNUML 3
+#define LSCRL 3
+#define LNUML 4
 #define LARWR 5
 #define LMOVR 6
-#define LNUMR 7
-#define LTYPARW 8
-#define LTYPMOV 9
-#define LTYPNUM 10
-#define LARWTYP 11
-#define LARWARW 12
-#define LARWMOV 13
-#define LARWNUM 14
-#define LMOVTYP 15
-#define LMOVARW 16
-#define LMOVMOV 17
-#define LMOVNUM 18
-#define LNUMTYP 19
-#define LNUMARW 20
-#define LNUMMOV 21
-#define LNUMNUM 22
+#define LSCRR 7
+#define LNUMR 8
+#define LTYPARW 9
+#define LTYPMOV 10
+#define LTYPSCR 11
+#define LTYPNUM 12
+#define LARWTYP 13
+#define LARWARW 14
+#define LARWMOV 15
+#define LARWSCR 16
+#define LARWNUM 17
+#define LMOVTYP 18
+#define LMOVARW 19
+#define LMOVMOV 20
+#define LMOVSCR 21
+#define LMOVNUM 22
+#define LSCRTYP 23
+#define LSCRARW 24
+#define LSCRMOV 25
+#define LSCRSCR 26
+#define LSCRNUM 27
+#define LNUMTYP 28
+#define LNUMARW 29
+#define LNUMMOV 30
+#define LNUMSCR 31
+#define LNUMNUM 32
 
-#define TYP_LAYERS_LEFT <0 8 9 10>
-#define TYP_LAYERS_RIGHT <0 11 15 19>
+#define TYP_LAYERS_LEFT <0 9 10 11 12>
+#define TYP_LAYERS_RIGHT <0 13 18 23 28>
 
 // LEFT SIDE (Mapped to Lozenge40 Home Row)
 #define TLP 10 // Top Left Pinky
@@ -68,6 +79,8 @@
 #define RIT 37 // Right Inner Thumb
 #define ROT 38 // Right Outer Thumb
 
+#define MO_TOG(layer) &mo_tog layer layer
+
 &sk {
     release-after-ms = <STICKY_TIMEOUT>;
     quick-release;
@@ -92,56 +105,56 @@
           #binding-cells = <0>;
           wait-ms = <0>;
           tap-ms = <0>;
-          bindings = <&tog_off LARWL &tog_off LMOVL &tog_off LNUML>;
+          bindings = <&tog_off LARWL &tog_off LMOVL &tog_off LSCRL &tog_off LNUML>;
       };
       toarwl: goto_arw_left_layer {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
           wait-ms = <0>;
           tap-ms = <0>;
-          bindings = <&tog_on LARWL &tog_off LMOVL &tog_off LNUML>;
+          bindings = <&tog_on LARWL &tog_off LMOVL &tog_off LSCRL &tog_off LNUML>;
       };
       tomovl: goto_mov_left_layer {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
           wait-ms = <0>;
           tap-ms = <0>;
-          bindings = <&tog_off LARWL &tog_on LMOVL &tog_off LNUML>;
+          bindings = <&tog_off LARWL &tog_on LMOVL &tog_off LSCRL &tog_off LNUML>;
       };
       tonuml: goto_num_left_layer {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
           wait-ms = <0>;
           tap-ms = <0>;
-          bindings = <&tog_off LARWL &tog_off LMOVL &tog_on LNUML>;
+          bindings = <&tog_off LARWL &tog_off LMOVL &tog_off LSCRL &tog_on LNUML>;
       };
       totypr: goto_typ_right_layer {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
           wait-ms = <0>;
           tap-ms = <0>;
-          bindings = <&tog_off LARWR &tog_off LMOVR &tog_off LNUMR>;
+          bindings = <&tog_off LARWR &tog_off LMOVR &tog_off LSCRR &tog_off LNUMR>;
       };
       toarwr: goto_arw_right_layer {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
           wait-ms = <0>;
           tap-ms = <0>;
-          bindings = <&tog_on LARWR &tog_off LMOVR &tog_off LNUMR>;
+          bindings = <&tog_on LARWR &tog_off LMOVR &tog_off LSCRR &tog_off LNUMR>;
       };
       tomovr: goto_mov_right_layer {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
           wait-ms = <0>;
           tap-ms = <0>;
-          bindings = <&tog_off LARWR &tog_on LMOVR &tog_off LNUMR>;
+          bindings = <&tog_off LARWR &tog_on LMOVR &tog_off LSCRR &tog_off LNUMR>;
       };
       tonumr: goto_num_right_layer {
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
           wait-ms = <0>;
           tap-ms = <0>;
-          bindings = <&tog_off LARWR &tog_off LMOVR &tog_on LNUMR>;
+          bindings = <&tog_off LARWR &tog_off LMOVR &tog_off LSCRR &tog_on LNUMR>;
       };
   };
 
@@ -196,6 +209,14 @@
           tapping-term-ms = <200>;
           bindings = <&sk LGUI>, <&kt LGUI>;
       };
+
+      mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+        };
     };
 
   keymap {
@@ -217,9 +238,17 @@
     movl_layer {
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &mkp MB3  &kt LCTRL       &mmv MOVE_UP    &kt LSHFT        &trans &trans &trans &trans &trans &trans &trans &trans
-        &none     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans &trans &trans &trans &trans &trans &trans &trans
-                  &trans          &mkp MB1        &mkp MB2                                     &trans &trans &trans
+        &mkp MB3       &kt LCTRL       &mmv MOVE_UP    &kt LSHFT        &trans &trans &trans &trans &trans &trans &trans &trans
+        MO_TOG(LSCRL)  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans &trans &trans &trans &trans &trans &trans &trans
+                       &trans          &mkp MB1        &mkp MB2                                     &trans &trans &trans
+      >;
+    };
+    scrl_layer {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &clear_mods    &kt LALT        &msc SCRL_UP    &kt LGUI         &trans &trans &trans &trans &trans &trans &trans &trans
+        MO_TOG(LSCRL)  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans &trans &trans &trans &trans &trans &trans &trans
+                       &trans          &mkp MB4        &mkp MB5                                     &trans &trans &trans
       >;
     };
     numl_layer {
@@ -242,8 +271,16 @@
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans    &kt LSHFT       &mmv MOVE_UP    &kt LCTRL        &mkp MB3
-        &trans &trans &trans &trans &trans &trans &trans &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
+        &trans &trans &trans &trans &trans &trans &trans &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  MO_TOG(LSCRR)
                &trans &trans &trans                                &mkp MB2        &mkp MB1        &trans
+      >;
+    };
+    scrr_layer {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans &trans &trans    &kt LGUI        &msc SCRL_UP    &kt LALT         &clear_mods
+        &trans &trans &trans &trans &trans &trans &trans &trans    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  MO_TOG(LSCRR)
+               &trans &trans &trans                                &mkp MB5        &mkp MB4        &trans
       >;
     };
     numr_layer {
@@ -263,6 +300,10 @@
       display-name = "Typ-Mov";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
+    typ_scr_layer {
+      display-name = "Typ-Scr";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
     typ_num_layer {
       display-name = "Typ-Num";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
@@ -277,6 +318,10 @@
     };
     arw_mov_layer {
       display-name = "Arw-Mov";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    arw_scr_layer {
+      display-name = "Arw-Scr";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     arw_num_layer {
@@ -295,8 +340,32 @@
       display-name = "Mov-Mov";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
+    mov_scr_layer {
+      display-name = "Mov-Scr";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
     mov_num_layer {
       display-name = "Mov-Num";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    scr_type_layer {
+      display-name = "Scr-Typ";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    scr_arw_layer {
+      display-name = "Scr-Arw";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    scr_mov_layer {
+      display-name = "Scr-Mov";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    scr_scr_layer {
+      display-name = "Scr-Scr";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    scr_num_layer {
+      display-name = "Scr-Num";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     num_typ_layer {
@@ -309,6 +378,10 @@
     };
     num_mov_layer {
       display-name = "Num-Mov";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    num_scr_layer {
+      display-name = "Num-Scr";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     num_num_layer {
@@ -327,6 +400,10 @@
             if-layers = <LMOVR>;
             then-layer = <LTYPMOV>;
         };
+        typ_scr_layer_condition {
+            if-layers = <LSCRR>;
+            then-layer = <LTYPSCR>;
+        };
         typ_num_layer_condition {
             if-layers = <LNUMR>;
             then-layer = <LTYPNUM>;
@@ -342,6 +419,10 @@
         arw_mov_layer_condition {
             if-layers = <LARWL LMOVR>;
             then-layer = <LARWMOV>;
+        };
+        arw_scr_layer_condition {
+            if-layers = <LARWL LSCRR>;
+            then-layer = <LARWSCR>;
         };
         arw_num_layer_condition {
             if-layers = <LARWL LNUMR>;
@@ -359,9 +440,33 @@
             if-layers = <LMOVL LMOVR>;
             then-layer = <LMOVMOV>;
         };
+        mov_scr_layer_condition {
+            if-layers = <LMOVL LSCRR>;
+            then-layer = <LMOVSCR>;
+        };
         mov_num_layer_condition {
             if-layers = <LMOVL LNUMR>;
             then-layer = <LMOVNUM>;
+        };
+        scr_typ_layer_condition {
+            if-layers = <LSCRL>;
+            then-layer = <LSCRTYP>;
+        };
+        scr_arw_layer_condition {
+            if-layers = <LSCRL LARWR>;
+            then-layer = <LSCRARW>;
+        };
+        scr_mov_layer_condition {
+            if-layers = <LSCRL LMOVR>;
+            then-layer = <LSCRMOV>;
+        };
+        scr_scr_layer_condition {
+            if-layers = <LSCRL LSCRR>;
+            then-layer = <LSCRSCR>;
+        };
+        scr_num_layer_condition {
+            if-layers = <LSCRL LNUMR>;
+            then-layer = <LSCRNUM>;
         };
         num_typ_layer_condition {
             if-layers = <LNUML>;
@@ -374,6 +479,10 @@
         num_mov_layer_condition {
             if-layers = <LNUML LMOVR>;
             then-layer = <LNUMMOV>;
+        };
+        num_scr_layer_condition {
+            if-layers = <LNUML LSCRR>;
+            then-layer = <LNUMSCR>;
         };
         num_num_layer_condition {
             if-layers = <LNUML LNUMR>;
