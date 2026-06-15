@@ -151,14 +151,12 @@
           #binding-cells = <1>;
           display-name = "Toggle Layer On";
           toggle-mode = "on";
-          locking;
       };
       tog_off: toggle_layer_off_only {
           compatible = "zmk,behavior-toggle-layer";
           #binding-cells = <1>;
           display-name = "Toggle Layer Off";
           toggle-mode = "off";
-          locking;
       };
       kt_on: key_toggle_on_only {
           compatible = "zmk,behavior-key-toggle";
