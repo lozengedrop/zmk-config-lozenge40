@@ -111,10 +111,10 @@
       display-name = "Dead";
       // 40 Keys matching the Lozenge40 matrix transform
       bindings = <
-        &none &none &none &none &none             &none &none &none &none &none
-        &none &none &none &none &none &none       &none &none &none &none &none &none
-        &none &none &none &none &none &none       &none &none &none &none &none &none
-                          &none &none &none       &none &none &none
+        &to 1 &to 1 &to 1 &to 1 &to 1             &to 1 &to 1 &to 1 &to 1 &to 1
+        &to 1 &to 1 &to 1 &to 1 &to 1 &to 1       &to 1 &to 1 &to 1 &to 1 &to 1 &to 1
+        &to 1 &to 1 &to 1 &to 1 &to 1 &to 1       &to 1 &to 1 &to 1 &to 1 &to 1 &to 1
+                          &to 1 &to 1 &to 1       &to 1 &to 1 &to 1
       >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; // Assuming encoder volume
     };
