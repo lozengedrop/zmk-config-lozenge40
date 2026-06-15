@@ -11,8 +11,33 @@
 
 // CONFIG
 #define COMBO_TIMEOUT 70
-#define COMBO_LAYERS 1
-#define STICKY_TIMEOUT 3000
+#define STICKY_TIMEOUT 500
+
+#define LTYPTYP 0
+#define LARWL 1
+#define LMOVL 2
+#define LNUML 3
+#define LARWR 5
+#define LMOVR 6
+#define LNUMR 7
+#define LTYPARW 8
+#define LTYPMOV 9
+#define LTYPNUM 10
+#define LARWTYP 11
+#define LARWARW 12
+#define LARWMOV 13
+#define LARWNUM 14
+#define LMOVTYP 15
+#define LMOVARW 16
+#define LMOVMOV 17
+#define LMOVNUM 18
+#define LNUMTYP 19
+#define LNUMARW 20
+#define LNUMMOV 21
+#define LNUMNUM 22
+
+#define TYP_LAYERS_LEFT <0 8 9 10>
+#define TYP_LAYERS_RIGHT <0 11 15 19>
 
 // LEFT SIDE (Mapped to Lozenge40 Home Row)
 #define TLP 10 // Top Left Pinky
@@ -61,9 +86,79 @@
           tap-ms = <0>;
           bindings = <&kt_off LSHIFT &kt_off LCTRL &kt_off LALT &kt_off LGUI>;
       };
+      totypl: goto_typ_left_layer {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <0>;
+          tap-ms = <0>;
+          bindings = <&tog_off LARWL &tog_off LMOVL &tog_off LNUML>;
+      };
+      toarwl: goto_arw_left_layer {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <0>;
+          tap-ms = <0>;
+          bindings = <&tog_on LARWL &tog_off LMOVL &tog_off LNUML>;
+      };
+      tomovl: goto_mov_left_layer {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <0>;
+          tap-ms = <0>;
+          bindings = <&tog_off LARWL &tog_on LMOVL &tog_off LNUML>;
+      };
+      tonuml: goto_num_left_layer {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <0>;
+          tap-ms = <0>;
+          bindings = <&tog_off LARWL &tog_off LMOVL &tog_on LNUML>;
+      };
+      totypr: goto_typ_right_layer {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <0>;
+          tap-ms = <0>;
+          bindings = <&tog_off LARWR &tog_off LMOVR &tog_off LNUMR>;
+      };
+      toarwr: goto_arw_right_layer {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <0>;
+          tap-ms = <0>;
+          bindings = <&tog_on LARWR &tog_off LMOVR &tog_off LNUMR>;
+      };
+      tomovr: goto_mov_right_layer {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <0>;
+          tap-ms = <0>;
+          bindings = <&tog_off LARWR &tog_on LMOVR &tog_off LNUMR>;
+      };
+      tonumr: goto_num_right_layer {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <0>;
+          tap-ms = <0>;
+          bindings = <&tog_off LARWR &tog_off LMOVR &tog_on LNUMR>;
+      };
   };
 
   behaviors {
+      tog_on: toggle_layer_on_only {
+          compatible = "zmk,behavior-toggle-layer";
+          #binding-cells = <1>;
+          display-name = "Toggle Layer On";
+          toggle-mode = "on";
+          locking;
+      };
+      tog_on: toggle_layer_off_only {
+          compatible = "zmk,behavior-toggle-layer";
+          #binding-cells = <1>;
+          display-name = "Toggle Layer Off";
+          toggle-mode = "off";
+          locking;
+      };
       kt_on: key_toggle_on_only {
           compatible = "zmk,behavior-key-toggle";
           #binding-cells = <1>;
@@ -107,38 +202,183 @@
   keymap {
     compatible = "zmk,keymap";
 
-    dead_layer {
-      display-name = "Dead";
-      // 40 Keys matching the Lozenge40 matrix transform
-      bindings = <
-        &to 1 &to 1 &to 1 &to 1 &to 1             &to 1 &to 1 &to 1 &to 1 &to 1
-        &to 1 &to 1 &to 1 &to 1 &to 1 &to 1       &to 1 &to 1 &to 1 &to 1 &to 1 &to 1
-        &to 1 &to 1 &to 1 &to 1 &to 1 &to 1       &to 1 &to 1 &to 1 &to 1 &to 1 &to 1
-                          &to 1 &to 1 &to 1       &to 1 &to 1 &to 1
-      >;
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; // Assuming encoder volume
-    };
-    type_type_layer {
+    typ_typ_layer {
       display-name = "Typ-Typ";
-      // 40 Keys matching the Lozenge40 matrix transform
-      bindings = <
-        &none &none &none &none &none             &none &none &none &none &none
-        &none &none &none &none &none &none       &none &none &none &none &none &none
-        &none &none &none &none &none &none       &none &none &none &none &none &none
-                          &none &none &none       &none &none &none
-      >;
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; // Assuming encoder volume
+      bindings = < &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none >;
     };
-    arw_type_layer {
-      display-name = "Arw-Typ";
-      // 40 Keys matching the Lozenge40 matrix transform
+
+    arwl_layer {
       bindings = <
-        &none &none &none &none &none             &none &none &none &none &none
-        &kp PGUP &kp HOME &kp UP &kp END &none &none       &none &none &none &none &none &none
-        &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &none &none       &none &none &none &none &none &none
-                          &none &kp LSHIFT &kp BSPC       &none &none &none
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &kp PGUP   &kp HOME   &kp UP     &kp END    &trans &trans &trans &trans &trans &trans &trans &trans
+        &kp PGDN   &kp LEFT   &kp DOWN   &kp RIGHT  &trans &trans &trans &trans &trans &trans &trans &trans
+                   &trans     &kp LSHFT  &kp BSPC                              &trans &trans &trans
       >;
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; // Assuming encoder volume
+    };
+    movl_layer {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &mkp MB3  &kt LCTRL       &mmv MOVE_UP    &kt LSHFT        &trans &trans &trans &trans &trans &trans &trans &trans
+        &none     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans &trans &trans &trans &trans &trans &trans &trans
+                  &trans          &mkp MB1        &mkp MB2                                     &trans &trans &trans
+      >;
+    };
+    numl_layer {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &kp N8  &kp N7  &kp N6  &kp N5    &trans &trans &trans &trans &trans &trans &trans &trans
+        &kp N4  &kp N3  &kp N2  &kp N1    &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans  &kp N0  &kp N9                                &trans &trans &trans
+      >;
+    };
+    arwr_layer {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans &trans &trans    &kp HOME  &kp UP      &kp END    &kp PGUP
+        &trans &trans &trans &trans &trans &trans &trans &trans    &kp LEFT  &kp DOWN    &kp RIGHT  &kp PGDN 
+               &trans &trans &trans                                &kp BSPC  &kp LSHIFT  &trans
+      >;
+    };
+    movr_layer {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans &trans &trans    &kt LSHFT       &mmv MOVE_UP    &kt LCTRL        &mkp MB3
+        &trans &trans &trans &trans &trans &trans &trans &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
+               &trans &trans &trans                                &mkp MB2        &mkp MB1        &trans
+      >;
+    };
+    numr_layer {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans &trans &trans    &kp N5  &kp N6  &kp N7  &kp N8
+        &trans &trans &trans &trans &trans &trans &trans &trans    &kp N1  &kp N2  &kp N3  &kp N4 
+               &trans &trans &trans                                &kp N9  &kp N0  &trans
+      >;
+    };
+
+    typ_arw_layer {
+      display-name = "Typ-Arw";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    typ_mov_layer {
+      display-name = "Typ-Mov";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    typ_num_layer {
+      display-name = "Typ-Num";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    arw_typ_layer {
+      display-name = "Arw-Typ";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    arw_arw_layer {
+      display-name = "Arw-Arw";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    arw_mov_layer {
+      display-name = "Arw-Mov";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    arw_num_layer {
+      display-name = "Arw-Num";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    mov_type_layer {
+      display-name = "Mov-Typ";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    mov_arw_layer {
+      display-name = "Mov-Arw";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    mov_mov_layer {
+      display-name = "Mov-Mov";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    mov_num_layer {
+      display-name = "Mov-Num";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    num_typ_layer {
+      display-name = "Num-Typ";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    num_arw_layer {
+      display-name = "Num-Arw";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    num_mov_layer {
+      display-name = "Num-Mov";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
+    num_num_layer {
+      display-name = "Num-Num";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
   };
+
+  conditional_layers {
+        compatible = "zmk,conditional-layers";
+        typ_arw_layer_condition {
+            if-layers = <LARWR>;
+            then-layer = <LTYPARW>;
+        };
+        typ_mov_layer_condition {
+            if-layers = <LMOVR>;
+            then-layer = <LTYPMOV>;
+        };
+        typ_num_layer_condition {
+            if-layers = <LNUMR>;
+            then-layer = <LTYPNUM>;
+        };
+        arw_typ_layer_condition {
+            if-layers = <LARWL>;
+            then-layer = <LARWTYP>;
+        };
+        arw_arw_layer_condition {
+            if-layers = <LARWL LARWR>;
+            then-layer = <LARWARW>;
+        };
+        arw_mov_layer_condition {
+            if-layers = <LARWL LMOVR>;
+            then-layer = <LARWMOV>;
+        };
+        arw_num_layer_condition {
+            if-layers = <LARWL LNUMR>;
+            then-layer = <LARWNUM>;
+        };
+        mov_typ_layer_condition {
+            if-layers = <LMOVL>;
+            then-layer = <LMOVTYP>;
+        };
+        mov_arw_layer_condition {
+            if-layers = <LMOVL LARWR>;
+            then-layer = <LMOVARW>;
+        };
+        mov_mov_layer_condition {
+            if-layers = <LMOVL LMOVR>;
+            then-layer = <LMOVMOV>;
+        };
+        mov_num_layer_condition {
+            if-layers = <LMOVL LNUMR>;
+            then-layer = <LMOVNUM>;
+        };
+        num_typ_layer_condition {
+            if-layers = <LNUML>;
+            then-layer = <LNUMTYP>;
+        };
+        num_arw_layer_condition {
+            if-layers = <LNUML LARWR>;
+            then-layer = <LNUMARW>;
+        };
+        num_mov_layer_condition {
+            if-layers = <LNUML LMOVR>;
+            then-layer = <LNUMMOV>;
+        };
+        num_num_layer_condition {
+            if-layers = <LNUML LNUMR>;
+            then-layer = <LNUMNUM>;
+        };
+    };
 };

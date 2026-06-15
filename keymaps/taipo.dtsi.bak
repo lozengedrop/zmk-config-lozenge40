@@ -116,4 +116,3 @@ TCOMBO(LGUI,   &sk LGUI,   &kp RIGHT, &kp PGUP,   &bt BT_SEL 3, TLP BLP,     TRP
 TCOMBO(LALT,   &sk LALT,   &kp UP,    &kp HOME,   &bt BT_SEL 2, TLR BLR,     TRR BRR)
 TCOMBO(LCTRL,  &sk LCTRL,  &kp DOWN,  &kp END,    &bt BT_SEL 1, TLM BLM,     TRM BRM)
 TCOMBO(LSHIFT, &sk LSHIFT, &kp LEFT,  &kp PGDN,   &bt BT_SEL 0, TLI BLI,     TRI BRI)
-TCOMBO(TOARW,  &tog 2    , &none,     &none,      &bt BT_SEL 0, TLI BLI,     TRI BRI)
