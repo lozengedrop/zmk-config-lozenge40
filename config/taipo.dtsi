@@ -3,77 +3,77 @@ combo_l_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <BINDINGS>; \
 	key-positions = <LEFT_KEYPOS>; \
-	layers = <TYP_LAYERS_LEFT>; \
+	layers = TYP_LAYERS_LEFT; \
 }; \
 combo_li_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <INNER_BINDINGS>; \
 	key-positions = <LEFT_KEYPOS LIT>; \
-	layers = <TYP_LAYERS_LEFT>; \
+	layers = TYP_LAYERS_LEFT; \
 }; \
 combo_lo_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <OUTER_BINDINGS>; \
 	key-positions = <LEFT_KEYPOS LOT>; \
-	layers = <TYP_LAYERS_LEFT>; \
+	layers = TYP_LAYERS_LEFT; \
 }; \
 combo_lb_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <BOTH_BINDINGS>; \
 	key-positions = <LEFT_KEYPOS LIT LOT>; \
-	layers = <TYP_LAYERS_LEFT>; \
+	layers = TYP_LAYERS_LEFT; \
 }; \
 combo_r_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <BINDINGS>; \
 	key-positions = <RIGHT_KEYPOS>; \
-	layers = <TYP_LAYERS_RIGHT>; \
+	layers = TYP_LAYERS_RIGHT; \
 }; \
 combo_ri_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <INNER_BINDINGS>; \
 	key-positions = <RIGHT_KEYPOS RIT>; \
-	layers = <TYP_LAYERS_RIGHT>; \
+	layers = TYP_LAYERS_RIGHT; \
 }; \
 combo_ro_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <OUTER_BINDINGS>; \
 	key-positions = <RIGHT_KEYPOS ROT>; \
-	layers = <TYP_LAYERS_RIGHT>; \
+	layers = TYP_LAYERS_RIGHT; \
 }; \
 combo_rb_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <BOTH_BINDINGS>; \
 	key-positions = <RIGHT_KEYPOS RIT ROT>; \
-	layers = <TYP_LAYERS_RIGHT>; \
+	layers = TYP_LAYERS_RIGHT; \
 };
 
 combo_l_space { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&kp SPACE>; \
 	key-positions = <LOT>; \
-	layers = <TYP_LAYERS_LEFT>; \
+	layers = TYP_LAYERS_LEFT; \
 };
 
 combo_r_space { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&kp SPACE>; \
 	key-positions = <ROT>; \
-	layers = <TYP_LAYERS_RIGHT>; \
+	layers = TYP_LAYERS_RIGHT; \
 };
 
 combo_l_bspc { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&kp BSPC>; \
 	key-positions = <LIT>; \
-	layers = <TYP_LAYERS_LEFT>; \
+	layers = TYP_LAYERS_LEFT; \
 };
 
 combo_r_bspc { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&kp BSPC>; \
 	key-positions = <RIT>; \
-	layers = <TYP_LAYERS_RIGHT>; \
+	layers = TYP_LAYERS_RIGHT; \
 };
 
 
