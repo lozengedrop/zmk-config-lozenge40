@@ -217,12 +217,12 @@
     compatible = "zmk,keymap";
 
     typ_typ_layer {
-      display-name = "TY-TY";
+      display-name = "TY--TY";
       bindings = < &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none >;
     };
 
     arwl_layer {
-      display-name = "AR-TY";
+      display-name = "AR--TY";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &kp PGUP   &kp HOME   &kp UP     &kp END    &trans &trans &trans &trans &trans &trans &trans &trans
@@ -231,7 +231,7 @@
       >;
     };
     movl_layer {
-      display-name = "MS-TY";
+      display-name = "MS--TY";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &mkp MB3       &kt LCTRL       &mmv MOVE_UP    &kt LSHFT        &trans &trans &trans &trans &trans &trans &trans &trans
@@ -240,7 +240,7 @@
       >;
     };
     scrl_layer {
-      display-name = "SC-TY";
+      display-name = "SC--TY";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &clear_mods    &kt LALT        &msc SCRL_UP    &kt LGUI         &trans &trans &trans &trans &trans &trans &trans &trans
@@ -249,7 +249,7 @@
       >;
     };
     numl_layer {
-      display-name = "NM-TY";
+      display-name = "NM--TY";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &kp N8  &kp N7  &kp N6  &kp N5    &trans &trans &trans &trans &trans &trans &trans &trans
@@ -258,7 +258,7 @@
       >;
     };
     arwr_layer {
-      display-name = "TY-AR";
+      display-name = "TY--AR";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans    &kp HOME  &kp UP      &kp END    &kp PGUP
@@ -267,7 +267,7 @@
       >;
     };
     movr_layer {
-      display-name = "TY-MS";
+      display-name = "TY--MS";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans    &kt LSHFT       &mmv MOVE_UP    &kt LCTRL        &mkp MB3
@@ -276,7 +276,7 @@
       >;
     };
     scrr_layer {
-      display-name = "TY-SC";
+      display-name = "TY--SC";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans    &kt LGUI        &msc SCRL_UP    &kt LALT         &clear_mods
@@ -285,7 +285,7 @@
       >;
     };
     numr_layer {
-      display-name = "TY-NM";
+      display-name = "TY--NM";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans    &kp N5  &kp N6  &kp N7  &kp N8
@@ -295,67 +295,67 @@
     };
 
     arw_arw_layer {
-      display-name = "AR-AR";
+      display-name = "AR--AR";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     arw_mov_layer {
-      display-name = "AR-MS";
+      display-name = "AR--MS";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     arw_scr_layer {
-      display-name = "AR-SC";
+      display-name = "AR--SC";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     arw_num_layer {
-      display-name = "AR-NM";
+      display-name = "AR--NM";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     mov_arw_layer {
-      display-name = "MS-AR";
+      display-name = "MS--AR";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     mov_mov_layer {
-      display-name = "MS-MS";
+      display-name = "MS--MS";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     mov_scr_layer {
-      display-name = "MS-SC";
+      display-name = "MS--SC";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     mov_num_layer {
-      display-name = "MS-NM";
+      display-name = "MS--NM";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     scr_arw_layer {
-      display-name = "SC-AR";
+      display-name = "SC--AR";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     scr_mov_layer {
-      display-name = "SC-MS";
+      display-name = "SC--MS";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     scr_scr_layer {
-      display-name = "SC-SC";
+      display-name = "SC--SC";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     scr_num_layer {
-      display-name = "SC-NM";
+      display-name = "SC--NM";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     num_arw_layer {
-      display-name = "NM-AR";
+      display-name = "NM--AR";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     num_mov_layer {
-      display-name = "NM-MS";
+      display-name = "NM--MS";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     num_scr_layer {
-      display-name = "NM-SC";
+      display-name = "NM--SC";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     num_num_layer {
-      display-name = "NM-NM";
+      display-name = "NM--NM";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
   };
