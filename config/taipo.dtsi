@@ -180,7 +180,7 @@ combo_num_minus_l { \
 };
 combo_num_equals_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp EQUALS>; \
+	bindings = <&kp EQUAL>; \
 	key-positions = <LOT LIT>; \
 	layers = NUM_LAYERS_LEFT; \
 };
@@ -270,7 +270,7 @@ combo_num_minus_r { \
 };
 combo_num_equals_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp EQUALS>; \
+	bindings = <&kp EQUAL>; \
 	key-positions = <ROT RIT>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
