@@ -23,32 +23,25 @@
 #define LMOVR 6
 #define LSCRR 7
 #define LNUMR 8
-#define LTYPARW 9
-#define LTYPMOV 10
-#define LTYPSCR 11
-#define LTYPNUM 12
-#define LARWTYP 13
-#define LARWARW 14
-#define LARWMOV 15
-#define LARWSCR 16
-#define LARWNUM 17
-#define LMOVTYP 18
-#define LMOVARW 19
-#define LMOVMOV 20
-#define LMOVSCR 21
-#define LMOVNUM 22
-#define LSCRTYP 23
-#define LSCRARW 24
-#define LSCRMOV 25
-#define LSCRSCR 26
-#define LSCRNUM 27
-#define LNUMTYP 28
-#define LNUMARW 29
-#define LNUMMOV 30
-#define LNUMSCR 31
+#define LARWARW 9
+#define LARWMOV 10
+#define LARWSCR 11
+#define LARWNUM 12
+#define LMOVARW 13
+#define LMOVMOV 14
+#define LMOVSCR 15
+#define LMOVNUM 16
+#define LSCRARW 17
+#define LSCRMOV 18
+#define LSCRSCR 19
+#define LSCRNUM 20
+#define LNUMARW 21
+#define LNUMMOV 22
+#define LNUMSCR 23
+#define LNUMNUM 24
 
-#define TYP_LAYERS_LEFT <0 9 10 11 12>
-#define TYP_LAYERS_RIGHT <0 13 18 23 28>
+#define TYP_LAYERS_LEFT <0 5 6 7 8>
+#define TYP_LAYERS_RIGHT <0 1 2 3 4>
 
 // LEFT SIDE (Mapped to Lozenge40 Home Row)
 #define TLP 10 // Top Left Pinky
@@ -222,11 +215,12 @@
     compatible = "zmk,keymap";
 
     typ_typ_layer {
-      display-name = "Typ-Typ";
+      display-name = "TypTyp";
       bindings = < &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none >;
     };
 
     arwl_layer {
+      display-name = "ArwTyp";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &kp PGUP   &kp HOME   &kp UP     &kp END    &trans &trans &trans &trans &trans &trans &trans &trans
@@ -235,6 +229,7 @@
       >;
     };
     movl_layer {
+      display-name = "MovTyp";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &mkp MB3       &kt LCTRL       &mmv MOVE_UP    &kt LSHFT        &trans &trans &trans &trans &trans &trans &trans &trans
@@ -243,6 +238,7 @@
       >;
     };
     scrl_layer {
+      display-name = "ScrTyp";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &clear_mods    &kt LALT        &msc SCRL_UP    &kt LGUI         &trans &trans &trans &trans &trans &trans &trans &trans
@@ -251,6 +247,7 @@
       >;
     };
     numl_layer {
+      display-name = "NumTyp";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &kp N8  &kp N7  &kp N6  &kp N5    &trans &trans &trans &trans &trans &trans &trans &trans
@@ -259,6 +256,7 @@
       >;
     };
     arwr_layer {
+      display-name = "TypArw";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans    &kp HOME  &kp UP      &kp END    &kp PGUP
@@ -267,6 +265,7 @@
       >;
     };
     movr_layer {
+      display-name = "TypMov";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans    &kt LSHFT       &mmv MOVE_UP    &kt LCTRL        &mkp MB3
@@ -275,6 +274,7 @@
       >;
     };
     scrr_layer {
+      display-name = "TypScr";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans    &kt LGUI        &msc SCRL_UP    &kt LALT         &clear_mods
@@ -283,6 +283,7 @@
       >;
     };
     numr_layer {
+      display-name = "TypNum";
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans    &kp N5  &kp N6  &kp N7  &kp N8
@@ -291,26 +292,6 @@
       >;
     };
 
-    typ_arw_layer {
-      display-name = "TypArw";
-      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
-    };
-    typ_mov_layer {
-      display-name = "TypMov";
-      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
-    };
-    typ_scr_layer {
-      display-name = "TypScr";
-      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
-    };
-    typ_num_layer {
-      display-name = "TypNum";
-      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
-    };
-    arw_typ_layer {
-      display-name = "ArwTyp";
-      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
-    };
     arw_arw_layer {
       display-name = "ArwArw";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
@@ -325,10 +306,6 @@
     };
     arw_num_layer {
       display-name = "ArwNum";
-      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
-    };
-    mov_type_layer {
-      display-name = "MovTyp";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
     mov_arw_layer {
@@ -347,10 +324,6 @@
       display-name = "MovNum";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
-    scr_type_layer {
-      display-name = "ScrTyp";
-      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
-    };
     scr_arw_layer {
       display-name = "ScrArw";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
@@ -367,10 +340,6 @@
       display-name = "ScrNum";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
-    num_typ_layer {
-      display-name = "NumTyp";
-      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
-    };
     num_arw_layer {
       display-name = "NumArw";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
@@ -383,30 +352,14 @@
       display-name = "NumScr";
       bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
     };
+    num_num_layer {
+      display-name = "NumNum";
+      bindings = < &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans >;
+    };
   };
 
   conditional_layers {
         compatible = "zmk,conditional-layers";
-        typ_arw_layer_condition {
-            if-layers = <LARWR>;
-            then-layer = <LTYPARW>;
-        };
-        typ_mov_layer_condition {
-            if-layers = <LMOVR>;
-            then-layer = <LTYPMOV>;
-        };
-        typ_scr_layer_condition {
-            if-layers = <LSCRR>;
-            then-layer = <LTYPSCR>;
-        };
-        typ_num_layer_condition {
-            if-layers = <LNUMR>;
-            then-layer = <LTYPNUM>;
-        };
-        arw_typ_layer_condition {
-            if-layers = <LARWL>;
-            then-layer = <LARWTYP>;
-        };
         arw_arw_layer_condition {
             if-layers = <LARWL LARWR>;
             then-layer = <LARWARW>;
@@ -422,10 +375,6 @@
         arw_num_layer_condition {
             if-layers = <LARWL LNUMR>;
             then-layer = <LARWNUM>;
-        };
-        mov_typ_layer_condition {
-            if-layers = <LMOVL>;
-            then-layer = <LMOVTYP>;
         };
         mov_arw_layer_condition {
             if-layers = <LMOVL LARWR>;
@@ -443,10 +392,6 @@
             if-layers = <LMOVL LNUMR>;
             then-layer = <LMOVNUM>;
         };
-        scr_typ_layer_condition {
-            if-layers = <LSCRL>;
-            then-layer = <LSCRTYP>;
-        };
         scr_arw_layer_condition {
             if-layers = <LSCRL LARWR>;
             then-layer = <LSCRARW>;
@@ -463,10 +408,6 @@
             if-layers = <LSCRL LNUMR>;
             then-layer = <LSCRNUM>;
         };
-        num_typ_layer_condition {
-            if-layers = <LNUML>;
-            then-layer = <LNUMTYP>;
-        };
         num_arw_layer_condition {
             if-layers = <LNUML LARWR>;
             then-layer = <LNUMARW>;
@@ -478,6 +419,10 @@
         num_scr_layer_condition {
             if-layers = <LNUML LSCRR>;
             then-layer = <LNUMSCR>;
+        };
+        num_num_layer_condition {
+            if-layers = <LNUML LNUMR>;
+            then-layer = <LNUMNUM>;
         };
     };
 };
