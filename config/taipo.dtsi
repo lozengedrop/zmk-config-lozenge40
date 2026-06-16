@@ -138,73 +138,73 @@ combo_num_left_l { \
 };
 combo_num_right_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp RIGHT>; \
 	key-positions = <BLR BLM BLI>; \
 	layers = NUM_LAYERS_LEFT; \
 };
 combo_num_tab_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp TAB>; \
 	key-positions = <TLP TLR TLM TLI>; \
 	layers = NUM_LAYERS_LEFT; \
 };
 combo_num_enter_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp ENTER>; \
 	key-positions = <BLP BLR BLM BLI>; \
 	layers = NUM_LAYERS_LEFT; \
 };
 combo_num_bksp_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp BSPC>; \
 	key-positions = <BLI LOT>; \
 	layers = NUM_LAYERS_LEFT; \
 };
 combo_num_del_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp DEL>; \
 	key-positions = <TLI LIT>; \
 	layers = NUM_LAYERS_LEFT; \
 };
 combo_num_plus_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp PLUS>; \
 	key-positions = <TLM TLI>; \
 	layers = NUM_LAYERS_LEFT; \
 };
 combo_num_minus_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp MINUS>; \
 	key-positions = <BLM BLI>; \
 	layers = NUM_LAYERS_LEFT; \
 };
 combo_num_equals_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp EQUALS>; \
 	key-positions = <LOT LIT>; \
 	layers = NUM_LAYERS_LEFT; \
 };
 combo_num_times_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp STAR>; \
 	key-positions = <TLR TLM>; \
 	layers = NUM_LAYERS_LEFT; \
 };
 combo_num_divide_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp SLASH>; \
 	key-positions = <BLR BLM>; \
 	layers = NUM_LAYERS_LEFT; \
 };
 combo_num_comma_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp COMMA>; \
 	key-positions = <TLP TLR>; \
 	layers = NUM_LAYERS_LEFT; \
 };
 combo_num_point_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp DOT>; \
 	key-positions = <BLP BLR>; \
 	layers = NUM_LAYERS_LEFT; \
 };
@@ -228,73 +228,73 @@ combo_num_left_r { \
 };
 combo_num_right_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp RIGHT>; \
 	key-positions = <BRR BRM BRI>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
 combo_num_tab_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp TAB>; \
 	key-positions = <TRP TRR TRM TRI>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
 combo_num_enter_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp ENTER>; \
 	key-positions = <BRP BRR BRM BRI>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
 combo_num_bksp_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp BSPC>; \
 	key-positions = <BRI ROT>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
 combo_num_del_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp DEL>; \
 	key-positions = <TRI RIT>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
 combo_num_plus_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp PLUS>; \
 	key-positions = <TRM TRI>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
 combo_num_minus_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp MINUS>; \
 	key-positions = <BRM BRI>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
 combo_num_equals_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp EQUALS>; \
 	key-positions = <ROT RIT>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
 combo_num_times_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp STAR>; \
 	key-positions = <TRR TRM>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
 combo_num_divide_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp SLASH>; \
 	key-positions = <BRR BRM>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
 combo_num_comma_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp COMMA>; \
 	key-positions = <TRP TRR>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
 combo_num_point_r { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp UP>; \
+	bindings = <&kp DOT>; \
 	key-positions = <BRP BRR>; \
 	layers = NUM_LAYERS_RIGHT; \
 };
