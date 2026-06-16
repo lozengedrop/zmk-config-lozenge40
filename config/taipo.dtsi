@@ -90,7 +90,7 @@ combo_goto_arw_l { \
 combo_goto_mov_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&tomovl>; \
-	key-positions = <TLR BLM BLI>; \
+	key-positions = <TLR BLM TLI>; \
 };
 combo_goto_num_l { \
 	timeout-ms = <COMBO_TIMEOUT>; \
