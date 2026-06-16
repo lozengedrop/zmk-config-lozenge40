@@ -12,7 +12,7 @@
 
 // CONFIG
 #define COMBO_TIMEOUT 70
-#define STICKY_TIMEOUT 500
+#define STICKY_TIMEOUT 2000
 
 #define LTYPTYP 0
 #define LARWL 1
