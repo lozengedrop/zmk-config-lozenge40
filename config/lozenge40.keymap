@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // CONFIG
-#define COMBO_TIMEOUT 70
+#define COMBO_TIMEOUT 100
 #define STICKY_TIMEOUT 2000
 
 #define LTYPTYP 0
